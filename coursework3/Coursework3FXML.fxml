@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.ScatterChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<TitledPane collapsible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="906.0" text="Statistical Analysis" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coursework3.Coursework3FXMLController">
+   <content>
+      <GridPane prefHeight="426.0" prefWidth="678.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="84.33331298828125" minHeight="10.0" prefHeight="22.000017801920578" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="183.9999821980794" minHeight="10.0" prefHeight="130.00001525878906" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="113.99998474121094" minHeight="10.0" prefHeight="61.33335876464844" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="101.66664123535156" minHeight="10.0" prefHeight="101.66664123535156" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="101.66664123535156" minHeight="10.0" prefHeight="101.66664123535156" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane prefHeight="65.0" prefWidth="409.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="93.0" minWidth="10.0" prefWidth="84.33334350585938" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.99994405110675" minWidth="0.0" prefWidth="32.333312988281236" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="317.33335367838544" minWidth="10.0" prefWidth="317.33335367838544" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Browse .txt file:" />
+                        <Button fx:id="browseButton" mnemonicParsing="false" onAction="#browseButtonPressed" text="..." GridPane.columnIndex="1" GridPane.halignment="LEFT" />
+                        <TextField fx:id="browseText" alignment="BASELINE_LEFT" editable="false" prefHeight="28.0" prefWidth="275.0" promptText="   Select text file (.txt) from which the data will be processed" GridPane.columnIndex="2">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </GridPane>
+                  <GridPane GridPane.rowIndex="2">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.33331298828125" minWidth="10.0" prefWidth="154.66666666666666" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.66665649414062" minWidth="10.0" prefWidth="159.99999999999997" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.3333740234375" minWidth="10.0" prefWidth="128.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <CheckBox fx:id="squareBox" alignment="CENTER" mnemonicParsing="false" onAction="#squareBoxHandler" selected="true" text="Square Root" textAlignment="CENTER" GridPane.halignment="CENTER">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="sturgesBox" mnemonicParsing="false" onAction="#sturgesBoxHandler" text="Sturge's" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="riceBox" mnemonicParsing="false" onAction="#riceBoxHandler" text="Rice Rule" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                  </GridPane>
+                  <GridPane prefHeight="139.0" prefWidth="290.0" GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="meanLabel1" text="Mean:" GridPane.rowIndex="2" />
+                        <Label fx:id="varianceLabel" text="Variance:" GridPane.rowIndex="4" />
+                        <Label fx:id="medianLabel" text="Median:" GridPane.rowIndex="3" />
+                        <Label fx:id="standarddeviationLabel" text="Standard Deviation:" GridPane.rowIndex="5" />
+                        <Button fx:id="runButton" mnemonicParsing="false" onAction="#runButtonPressed" text="Run" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="labelRun" prefHeight="17.0" prefWidth="382.0" text="Please press &quot;Run&quot; button once file is selected" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Label fx:id="binsLabel" text="Number of Bins:" GridPane.rowIndex="6" />
+                     </children>
+                  </GridPane>
+                  <GridPane GridPane.rowIndex="3">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="normalizationLabel" text="Normalization factor:" />
+                        <Label fx:id="meanLabel2" text="Mean:" GridPane.rowIndex="1" />
+                        <Label fx:id="sigmaLabel" text="Sigma:" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <GridPane GridPane.rowIndex="4">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveButtonPressed" text="Save charts as PNG file" GridPane.halignment="CENTER" />
+                        <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearButtonPressed" text="Clear All" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="rootPane" GridPane.columnIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <BarChart fx:id="nhPlot" animated="false" title="Normalised Histogram">
+                    <xAxis>
+                      <CategoryAxis animated="false" label="Normalised Bins / um " side="BOTTOM" fx:id="xAxisHistogram" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="yAxisHistogram" animated="false" label="Frequency" side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <ScatterChart fx:id="pdfPlot" animated="false" title="Probability Density Function" GridPane.rowIndex="1">
+                    <xAxis>
+                      <CategoryAxis animated="false" label="Measurement Data / um" side="BOTTOM" fx:id="xAxisPDF" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="yAxisPDF" animated="false" label="Frequency" side="LEFT" />
+                    </yAxis>
+                  </ScatterChart>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </content>
+   <font>
+      <Font name="System Bold" size="12.0" />
+   </font>
+</TitledPane>
